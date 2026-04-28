@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+        
+        <form id="contactForm" novalidate>
+            <h1>Контактна форма</h1>
+            
+            <div class="form-group" data-field="name">
+                <label for="name">Ім'я</label>
+                <input type="text" id="name" name="name" placeholder="Введіть ім'я">
+                <span class="error-msg">Тільки літери, мін. 2 символи</span>
+            </div>
+
+            <div class="form-group" data-field="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com">
+                <span class="error-msg">Невірний формат email</span>
+            </div>
+
+            <div class="form-group" data-field="phone">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX">
+                <span class="error-msg">Формат: +380XXXXXXXXX</span>
+            </div>
+
+            <div class="form-group" data-field="subject">
+                <label for="subject">Тема</label>
+                <select id="subject" name="subject">
+                    <option value="">Оберіть тему</option>
+                    <option value="support">Підтримка</option>
+                    <option value="sales">Продажі</option>
+                    <option value="other">Інше</option>
+                </select>
+                <span class="error-msg">Оберіть тему</span>
+            </div>
+
+            <div class="form-group" data-field="message">
+                <label for="message">Повідомлення</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <div class="counter-container">
+                    <span class="error-msg">Від 20 до 500 символів</span>
+                    <span id="charCounter">0 / 500</span>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Відправити</button>
+            <div id="successMsg" class="hidden">Форму успішно відправлено! 🎉</div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
